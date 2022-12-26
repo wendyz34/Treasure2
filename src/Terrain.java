@@ -43,9 +43,9 @@ public class Terrain
         }else if (terrainName == "Jungle"){
             color += GREEN_BOLD;
         } else if (terrainName== "Home") {
-            color += WHITE;
-        } else {
             color += RED;
+        } else {
+            color += WHITE;
         }
         return color + terrainName;
     }
