@@ -1,3 +1,4 @@
+import java.io.*;
 /**
  * The Town Class is where it all happens.
  * The Town is designed to manage all of the things a Hunter can do in town.
@@ -14,6 +15,7 @@ public class Town
     private Treasure treasure;
 
     private int winCond;
+
 
     //Constructor
     /**
@@ -197,7 +199,7 @@ public class Town
         double rnd = Math.random();
         if (rnd < .2)
         {
-            return new Terrain("Mountains", "Rope");
+            return  new Terrain("Mountains", "Rope");
         }
         else if (rnd < .4)
         {
@@ -209,7 +211,7 @@ public class Town
         }
         else if (rnd < .8)
         {
-            return new Terrain("Desert", "Water");
+            return new Terrain("Desert", "Water") ;
         }
         else if (rnd < .9)
         {
@@ -229,4 +231,5 @@ public class Town
         double rand = Math.random();
         return (rand < 0.5);
     }
+
 }

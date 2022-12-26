@@ -1,3 +1,4 @@
+
 /**
  * The Terrain class is designed to represent the zones between the towns in the Treasure Hunter game.
  * This code has been adapted from Ivan Turner's original program -- thank you Mr. Turner!
@@ -7,6 +8,14 @@ public class Terrain
     //instance variables
     private String terrainName;
     private String neededItem;
+    //color animation
+    public static final String BLUE = "\u001B[34m";
+    public static final String RED = "\u001B[31m";
+    public static final String GREEN = "\u001B[32m";
+    public static final String YELLOW = "\033[0;33m";
+    public static final String GREY = "\u001B[90";
+    public static final String WHITE = "\u001B[37m";
+    public static final String GREEN_BOLD = "\033[1;32m";
 
     /**
      * Sets the class member variables
@@ -19,10 +28,26 @@ public class Terrain
         neededItem = item;
     }
 
-    //Accessors
+    //Accessors + animation
     public String getTerrainName()
     {
-        return terrainName;
+        String color = "";
+        if (terrainName== "Mountains") {
+            color += GREY;
+        } else if (terrainName == "Ocean") {
+            color += BLUE;
+        } else if (terrainName == "Plains") {
+            color += GREEN;
+        } else if (terrainName == "Desert") {
+            color += YELLOW;
+        }else if (terrainName == "Jungle"){
+            color += GREEN_BOLD;
+        } else if (terrainName== "Home") {
+            color += WHITE;
+        } else {
+            color += RED;
+        }
+        return color + terrainName;
     }
 
     public String getNeededItem()
@@ -45,6 +70,7 @@ public class Terrain
         }
         return false;
     }
+
 
     //toString
     public String toString()
